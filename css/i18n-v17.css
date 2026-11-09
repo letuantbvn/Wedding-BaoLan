@@ -1,0 +1,79 @@
+/* v1.7 — VN/EN switcher, fits next to music without losing nav links. */
+.site-header { gap: clamp(10px,2vw,26px); }
+.desktop-nav { flex-shrink: 1; min-width: 0; }
+.desktop-nav a { white-space: nowrap; }
+.header-actions { display: flex; align-items: center; gap: 16px; flex: 0 0 auto; }
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 5px 11px;
+  border: 1px solid rgba(165,139,108,.5);
+  border-radius: 22px;
+  color: #9c8b77;
+  background: transparent;
+  font: 500 11px/1 var(--sans);
+  letter-spacing: .03em;
+  white-space: nowrap;
+  transition: border-color .2s ease,background-color .2s ease;
+}
+.language-toggle:hover { background: rgba(191,165,130,.12); border-color: #ad987e; }
+.language-toggle [data-lang] { opacity: .55; transition: opacity .18s,color .18s; }
+.language-toggle [data-lang].active { color: #5d5145; opacity: 1; font-weight: 600; }
+.language-separator { opacity: .3; }
+.language-toggle:focus-visible, .music-toggle:focus-visible {
+  outline: 2px solid #a68c67;
+  outline-offset: 3px;
+}
+@media (min-width: 851px) {
+  .header-actions { gap: 20px; }
+  .language-toggle { font-size: 12px; }
+  /* Câu tiếng Việt thường dài hơn; không dính mép header. */
+  .desktop-nav { gap: clamp(12px,1.5vw,28px); }
+  .site-header { padding-inline: clamp(25px,4vw,76px); }
+}
+@media (min-width: 601px) and (max-width: 1050px) {
+  .desktop-nav a { font-size: 10px; letter-spacing: .025em; }
+  .desktop-nav { gap: 12px; }
+  .site-header { padding-inline: 3vw; }
+  .header-actions { gap: 9px; }
+  .language-toggle { min-height: 31px; font-size: 10px; padding-inline: 7px; }
+}
+@media (max-width: 600px) {
+  /* Header hai hàng để giữ cả bốn mục điều hướng và hai nút điều khiển. */
+  .site-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "brand controls" "nav nav";
+    height: auto;
+    min-height: 83px;
+    padding: 9px 4vw 8px;
+    align-content: center;
+    gap: 7px 9px;
+  }
+  .site-header .brand { grid-area: brand; font-size: 24px; line-height: 1; }
+  .site-header .desktop-nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 6px;
+  }
+  .site-header .desktop-nav a { font-size: clamp(8px,2.3vw,10px); letter-spacing: 0; }
+  .site-header .header-actions { grid-area: controls; gap: 11px; }
+  .site-header .music-toggle { padding: 3px 0; }
+  .site-header .language-toggle { min-height: 29px; padding: 5px 8px; font-size: 10px; gap: 4px; }
+  html { scroll-padding-top: 98px; }
+  .hero { height: calc(91svh - 83px); }
+}
+@media (max-width: 355px) {
+  .site-header .desktop-nav a { font-size: 8px; }
+  .site-header .header-actions { gap: 8px; }
+  .site-header .language-toggle { min-height: 27px; padding: 5px 7px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .language-toggle,.language-toggle [data-lang] { transition: none; }
+}

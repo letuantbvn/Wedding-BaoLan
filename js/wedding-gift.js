@@ -1,7 +1,8 @@
 (() => {
   'use strict';
-  const config = window.WEDDING_CONFIG || {};
-  const gifts = config.gifts || {};
+  const cfg = window.WEDDING_CONFIG || {};
+  const gifts = cfg.gifts || {};
+  const t = (key) => window.WEDDING_I18N.t(key);
   const $ = selector => document.querySelector(selector);
 
   ['groom','bride'].forEach(side => {
@@ -15,13 +16,17 @@
     const status = $('[data-gift-status="' + side + '"]');
     if (!bank || !account || !holder || !qr || !qrPlaceholder || !copyButton) return;
 
-    bank.textContent = (data.bankName || '').trim() || 'Đang cập nhật';
-    account.textContent = (data.accountNumber || '').trim() || 'Đang cập nhật';
-    holder.textContent = (data.accountHolder || '').trim() || 'Đang cập nhật';
+    function render() {
+      bank.textContent = (data.bankName || '').trim() || t('accountPending');
+      account.textContent = (data.accountNumber || '').trim() || t('accountPending');
+      holder.textContent = (data.accountHolder || '').trim() || t('accountPending');
+      if (status.dataset.statusKey) status.textContent = t(status.dataset.statusKey);
+    }
+    render();
+    document.addEventListener('wedding:languagechange',render);
 
     if ((data.qrImage || '').trim()) {
       const src = data.qrImage.trim();
-      // Không hiện QR giả hoặc QR lỗi: giữ placeholder cho đến khi ảnh tải xong.
       qr.onload = () => {
         qr.hidden = false;
         qrPlaceholder.hidden = true;
@@ -39,10 +44,11 @@
       copyButton.addEventListener('click', async () => {
         try {
           await navigator.clipboard.writeText(data.accountNumber.trim());
-          status.textContent = 'Đã sao chép số tài khoản.';
+          status.dataset.statusKey = 'copySuccess';
         } catch (error) {
-          status.textContent = 'Hãy chọn và sao chép số tài khoản phía trên.';
+          status.dataset.statusKey = 'copyFail';
         }
+        status.textContent = t(status.dataset.statusKey);
       });
     }
   });

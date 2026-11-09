@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8f5ef">
   <meta name="description" content="Wedding Invitation — Trân trọng kính mời bạn đến chung vui trong ngày trọng đại.">
-  <title>Wedding Invitation | A Beautiful Beginning</title>
+  <title>Thiệp cưới | Bảo & Lan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&family=Italianno&display=swap" rel="stylesheet">
@@ -16,63 +16,64 @@
   <link rel="stylesheet" href="css/wedding-gift.css">
   <link rel="stylesheet" href="css/polish-v14.css">
   <link rel="stylesheet" href="css/typography-v16.css">
+  <link rel="stylesheet" href="css/i18n-v17.css">
 </head>
 <body class="is-locked">
   <div class="intro" id="intro" aria-label="Lời mời dự đám cưới">
-    <p class="eyebrow intro-overline">YOU ARE CORDIALLY INVITED</p>
+    <p class="eyebrow intro-overline" data-i18n="introOverline">TRÂN TRỌNG KÍNH MỜI</p>
     <div class="envelope" id="envelope">
       <div class="envelope-back"></div>
       <div class="invitation-paper">
-        <small>THE WEDDING OF</small>
+        <small data-i18n="introWeddingOf">LỄ THÀNH HÔN CỦA</small>
         <strong><span data-groom>Quốc Bảo</span><em>&</em><span data-bride>Ngọc Lan</span></strong>
         <small data-date-label>15 – 16 · 12 · 2026</small>
         <small class="intro-lunar-date" data-lunar-label>07–08/11/2026 (âm lịch)</small>
       </div>
       <div class="envelope-front"></div>
       <div class="envelope-flap"></div>
-      <button class="wax-seal" id="openInvitation" type="button" aria-label="Mở thiệp cưới">B<span>&</span>L</button>
+      <button class="wax-seal" id="openInvitation" type="button" data-i18n-aria="openInvitation" aria-label="Mở thiệp cưới">B<span>&</span>L</button>
     </div>
-    <p class="intro-hint">Chạm vào con dấu để mở thiệp</p>
+    <p class="intro-hint" data-i18n="introHint">Chạm vào con dấu để mở thiệp</p>
   </div>
 
   <main id="mainContent" class="site" inert>
     <header class="site-header">
       <a href="#home" class="brand" data-monogram>B&N</a>
-      <nav class="desktop-nav" aria-label="Điều hướng"><a href="#story">OUR STORY</a><a href="#details">THE DAY</a><a href="#gallery">GALLERY</a><a href="#rsvp">RSVP</a></nav>
-      <button id="musicToggle" class="music-toggle" type="button" aria-label="Bật nhạc nền" aria-pressed="false"><span class="music-bars"><i></i><i></i><i></i><i></i></span><span id="musicText">MUSIC OFF</span></button>
+      <nav class="desktop-nav" data-i18n-aria="navAria" aria-label="Điều hướng chính"><a href="#story" data-i18n="navStory">CHUYỆN CHÚNG MÌNH</a><a href="#details" data-i18n="navDay">NGÀY CƯỚI</a><a href="#gallery" data-i18n="navGallery">ALBUM ẢNH</a><a href="#rsvp" data-i18n="navRsvp">XÁC NHẬN</a></nav>
+      <div class="header-actions"><button id="musicToggle" class="music-toggle" type="button" aria-label="Bật nhạc nền" aria-pressed="false"><span class="music-bars"><i></i><i></i><i></i><i></i></span><span id="musicText">NHẠC TẮT</span></button><button id="languageToggle" class="language-toggle" type="button" aria-label="Chuyển sang tiếng Anh" aria-pressed="false" title="Chuyển sang tiếng Anh"><span data-lang="vi" lang="vi" class="active">VN</span><span class="language-separator" aria-hidden="true">/</span><span data-lang="en" lang="en">EN</span></button></div>
     </header>
 
     <section class="hero" id="home">
       <div class="hero-photo photo-placeholder" data-photo="hero"></div><div class="hero-shade"></div>
       <div class="hero-content reveal">
-        <p class="eyebrow inverse">TOGETHER WITH OUR FAMILIES</p>
+        <p class="eyebrow inverse" data-i18n="heroFamily">CÙNG GIA ĐÌNH HAI BÊN</p>
         <h1><span data-groom>Quốc Bảo</span><i>&</i><span data-bride>Ngọc Lan</span></h1>
-        <p class="hero-note">REQUEST THE PLEASURE OF YOUR COMPANY</p>
+        <p class="hero-note" data-i18n="heroNote">TRÂN TRỌNG KÍNH MỜI BẠN ĐẾN CHUNG VUI</p>
         <div class="hero-date"><span data-date-label>15 – 16 · 12 · 2026</span><b>·</b><span data-weekday>TUESDAY – WEDNESDAY</span></div>
         <p class="hero-lunar-date" data-lunar-label>07–08/11/2026 (âm lịch)</p>
-      </div><a class="scroll-down" href="#welcome">SCROLL TO EXPLORE <span>↓</span></a>
+      </div><a class="scroll-down" href="#welcome"><span data-i18n="scroll">KHÁM PHÁ THIỆP CƯỚI</span> <span aria-hidden="true">↓</span></a>
     </section>
 
     <section class="welcome section-pad" id="welcome">
-      <span class="ornament reveal">✳</span><p class="eyebrow reveal">SAVE THE DATE</p>
-      <h2 class="display-title reveal">A beautiful beginning<br><i>to forever.</i></h2>
-      <p class="paragraph reveal">Có những cuộc gặp gỡ trở thành định mệnh. Chúng tôi rất hạnh phúc khi được cùng nhau viết nên chương mới của cuộc đời, và mong bạn sẽ hiện diện để chia sẻ niềm vui ấy.</p>
+      <span class="ornament reveal">✳</span><p class="eyebrow reveal" data-i18n="saveDate">LƯU LẠI NGÀY VUI</p>
+      <h2 class="display-title reveal" data-i18n-html="welcomeTitle">Khởi đầu hạnh phúc<br><i>cho mãi về sau.</i></h2>
+      <p class="paragraph reveal" data-i18n="welcomePara">Có những cuộc gặp gỡ trở thành định mệnh. Chúng tôi rất hạnh phúc khi được cùng nhau viết nên chương mới của cuộc đời, và mong bạn sẽ hiện diện để chia sẻ niềm vui ấy.</p>
       <div class="date-seal reveal"><span data-day>15–16</span><small data-month>DECEMBER</small><small data-year>2026</small></div>
       <p class="welcome-lunar-date reveal" data-lunar-label>07–08/11/2026 (âm lịch)</p>
     </section>
 
     <section class="story section-pad" id="story">
-      <div class="section-title reveal"><p class="eyebrow">CHAPTER ONE</p><h2 class="display-title">Our <i>story</i></h2><p class="subtitle">Every love story is beautiful, but ours is our favorite.</p></div>
-      <div class="story-layout"><div class="story-picture photo-placeholder reveal" data-photo="storyOne"><span>OUR MOMENTS</span></div><div class="story-body reveal"><span class="script">Together</span><p>Từ những điều bình dị nhất, chúng tôi tìm thấy ở nhau sự đồng hành, sẻ chia và một tình yêu muốn gìn giữ suốt đời.</p><hr><small>AND THE JOURNEY CONTINUES...</small></div><div class="story-picture photo-placeholder reveal" data-photo="storyTwo"><span>FOREVER</span></div></div>
+      <div class="section-title reveal"><p class="eyebrow" data-i18n="storyChapter">CHƯƠNG ĐẦU TIÊN</p><h2 class="display-title" data-i18n-html="storyTitle">Chuyện <i>chúng mình</i></h2><p class="subtitle" data-i18n="storySubtitle">Mỗi câu chuyện tình yêu đều đẹp theo cách riêng của nó.</p></div>
+      <div class="story-layout"><div class="story-picture photo-placeholder reveal" data-photo="storyOne"><span data-i18n="storyMoments">KHOẢNH KHẮC CỦA CHÚNG MÌNH</span></div><div class="story-body reveal"><span class="script" data-i18n="storyTogether">Bên nhau</span><p data-i18n="storyPara">Từ những điều bình dị nhất, chúng tôi tìm thấy ở nhau sự đồng hành, sẻ chia và một tình yêu muốn gìn giữ suốt đời.</p><hr><small data-i18n="storyJourney">VÀ HÀNH TRÌNH VẪN TIẾP NỐI...</small></div><div class="story-picture photo-placeholder reveal" data-photo="storyTwo"><span data-i18n="storyForever">MÃI BÊN NHAU</span></div></div>
     </section>
 
-    <section class="countdown-section section-pad"><p class="eyebrow inverse reveal">COUNTING DOWN TO FOREVER</p><h2 class="display-title reveal">The day is <i>almost here.</i></h2><div class="countdown reveal" id="countdown"><div><strong id="days">000</strong><small>DAYS</small></div><b>:</b><div><strong id="hours">00</strong><small>HOURS</small></div><b>:</b><div><strong id="minutes">00</strong><small>MINUTES</small></div><b>:</b><div><strong id="seconds">00</strong><small>SECONDS</small></div></div><p id="countdownLabel">15 – 16 December 2026</p></section>
+    <section class="countdown-section section-pad"><p class="eyebrow inverse reveal" data-i18n="countdownOverline">ĐẾM NGƯỢC ĐẾN NGÀY HẠNH PHÚC</p><h2 class="display-title reveal" data-i18n-html="countdownTitle">Ngày vui <i>sắp đến.</i></h2><div class="countdown reveal" id="countdown"><div><strong id="days">000</strong><small data-i18n="days">NGÀY</small></div><b>:</b><div><strong id="hours">00</strong><small data-i18n="hours">GIỜ</small></div><b>:</b><div><strong id="minutes">00</strong><small data-i18n="minutes">PHÚT</small></div><b>:</b><div><strong id="seconds">00</strong><small data-i18n="seconds">GIÂY</small></div></div><p id="countdownLabel">15 – 16 December 2026</p></section>
 
     <section class="details section-pad" id="details">
       <div class="section-title reveal">
-        <p class="eyebrow">JOIN OUR CELEBRATION</p>
-        <h2 class="display-title">The <i>wedding day</i></h2>
-        <p class="subtitle">Your presence would make our day complete.</p>
+        <p class="eyebrow" data-i18n="dayOverline">TRÂN TRỌNG ĐÓN TIẾP</p>
+        <h2 class="display-title" data-i18n-html="dayTitle">Ngày <i>chung đôi</i></h2>
+        <p class="subtitle" data-i18n="daySubtitle">Sự hiện diện của bạn sẽ khiến ngày vui thêm trọn vẹn.</p>
       </div>
       <div class="event-date-banner reveal" aria-label="Ngày cưới">
         <span class="event-date-range" id="whenTitle">15 – 16 DECEMBER 2026</span>
@@ -80,60 +81,60 @@
         <span class="event-lunar-date" data-lunar-label>07–08/11/2026 (âm lịch)</span>
       </div>
       <div class="event-card reveal">
-        <article class="venue-card" aria-label="Địa điểm nhà trai">
+        <article class="venue-card" data-i18n-aria="venueGroomAria" aria-label="Địa điểm nhà trai">
           <span class="event-symbol">⌂</span>
-          <p class="eyebrow">GROOM'S FAMILY · NHÀ TRAI</p>
+          <p class="eyebrow" data-i18n="venueGroom">NHÀ TRAI</p>
           <h3 data-groom-venue>Địa điểm Nhà Trai</h3>
-          <div class="venue-schedule" data-groom-schedule aria-label="Lịch trình Nhà Trai"></div>
+          <div class="venue-schedule" data-groom-schedule data-i18n-aria="scheduleGroomAria" aria-label="Lịch trình Nhà Trai"></div>
           <p class="venue-address" data-groom-address>Địa chỉ Nhà Trai sẽ được cập nhật</p>
-          <a id="groomMapLink" href="#details" target="_blank" rel="noopener noreferrer">GET DIRECTIONS ↗</a>
+          <a id="groomMapLink" href="#details" target="_blank" rel="noopener noreferrer">XEM CHỈ ĐƯỜNG ↗</a>
         </article>
         <div class="event-divider"></div>
-        <article class="venue-card" aria-label="Địa điểm nhà gái">
+        <article class="venue-card" data-i18n-aria="venueBrideAria" aria-label="Địa điểm nhà gái">
           <span class="event-symbol">⌂</span>
-          <p class="eyebrow">BRIDE'S FAMILY · NHÀ GÁI</p>
+          <p class="eyebrow" data-i18n="venueBride">NHÀ GÁI</p>
           <h3 data-bride-venue>Địa điểm Nhà Gái</h3>
-          <div class="venue-schedule" data-bride-schedule aria-label="Lịch trình Nhà Gái"></div>
+          <div class="venue-schedule" data-bride-schedule data-i18n-aria="scheduleBrideAria" aria-label="Lịch trình Nhà Gái"></div>
           <p class="venue-address" data-bride-address>Địa chỉ Nhà Gái sẽ được cập nhật</p>
-          <a id="brideMapLink" href="#details" target="_blank" rel="noopener noreferrer">GET DIRECTIONS ↗</a>
+          <a id="brideMapLink" href="#details" target="_blank" rel="noopener noreferrer">XEM CHỈ ĐƯỜNG ↗</a>
         </article>
       </div>
       <div class="calendar-link-wrap reveal">
-        <a id="calendarLink" href="#details" target="_blank" rel="noopener noreferrer">ADD CELEBRATION TO CALENDAR ↗</a>
+        <a id="calendarLink" data-i18n="calendarLink" href="#details" target="_blank" rel="noopener noreferrer">THÊM NGÀY CƯỚI VÀO LỊCH ↗</a>
       </div>
-      <div class="dress-code reveal"><p class="eyebrow">DRESS CODE</p><p>Elegant · Formal · Festive</p><div><span></span><span></span><span></span><span></span></div></div>
+      <div class="dress-code reveal"><p class="eyebrow" data-i18n="dressCode">TRANG PHỤC</p><p data-i18n="dressValue">Lịch sự · Trang trọng · Tươi vui</p><div><span></span><span></span><span></span><span></span></div></div>
     </section>
 
-    <section class="gallery section-pad" id="gallery"><div class="section-title reveal"><p class="eyebrow">MOMENTS TO REMEMBER</p><h2 class="display-title">The <i>gallery</i></h2><p class="subtitle">A few frames from our favorite chapter.</p></div><div class="gallery-grid" id="galleryGrid" aria-label="Album ảnh cưới"></div>
+    <section class="gallery section-pad" id="gallery"><div class="section-title reveal"><p class="eyebrow" data-i18n="galleryOverline">NHỮNG KHOẢNH KHẮC ĐÁNG NHỚ</p><h2 class="display-title" data-i18n-html="galleryTitle">Album <i>ảnh cưới</i></h2><p class="subtitle" data-i18n="gallerySubtitle">Những khoảnh khắc yêu thương trên hành trình của chúng mình.</p></div><div class="gallery-grid" id="galleryGrid" data-i18n-aria="galleryAria" aria-label="Album ảnh cưới"></div>
       <div class="gallery-actions">
         <button type="button" id="galleryMore" class="gallery-more" aria-controls="galleryGrid" aria-expanded="false" hidden>XEM THÊM ẢNH <span aria-hidden="true">↗</span></button>
         <p class="gallery-count" id="galleryCount" aria-live="polite"></p>
       </div>
     </section>
 
-    <section class="rsvp section-pad" id="rsvp"><div class="section-title reveal"><p class="eyebrow">KINDLY RESPOND</p><h2 class="display-title">Will you <i>join us?</i></h2><p class="subtitle">Xin vui lòng xác nhận sự hiện diện của bạn trước ngày cưới.</p></div><form class="rsvp-form reveal" id="rsvpForm">
-        <label for="guestName">HỌ VÀ TÊN *</label><input type="text" id="guestName" name="guestName" placeholder="Tên của bạn" maxlength="100" required>
-        <label for="phone">SỐ ĐIỆN THOẠI</label><input type="tel" id="phone" name="phone" placeholder="Số điện thoại liên hệ" maxlength="30">
+    <section class="rsvp section-pad" id="rsvp"><div class="section-title reveal"><p class="eyebrow" data-i18n="rsvpOverline">XÁC NHẬN THAM DỰ</p><h2 class="display-title" data-i18n-html="rsvpTitle">Bạn sẽ <i>đến chung vui chứ?</i></h2><p class="subtitle" data-i18n="rsvpSubtitle">Xin vui lòng xác nhận sự hiện diện của bạn trước ngày cưới.</p></div><form class="rsvp-form reveal" id="rsvpForm">
+        <label for="guestName" data-i18n="guestNameLabel">HỌ VÀ TÊN *</label><input type="text" id="guestName" name="guestName" data-i18n-placeholder="guestNamePlaceholder" placeholder="Tên của bạn" maxlength="100" required>
+        <label for="phone" data-i18n="phoneLabel">SỐ ĐIỆN THOẠI</label><input type="tel" id="phone" name="phone" data-i18n-placeholder="phonePlaceholder" placeholder="Số điện thoại liên hệ" maxlength="30">
         <fieldset class="family-side-field">
-          <legend>BẠN LÀ KHÁCH BÊN NÀO? *</legend>
+          <legend data-i18n="guestSideLegend">BẠN LÀ KHÁCH BÊN NÀO? *</legend>
           <div class="radio-row family-side-options">
-            <label><input type="radio" name="guestSide" value="Nhà Trai" required> Nhà Trai</label>
-            <label><input type="radio" name="guestSide" value="Nhà Gái" required> Nhà Gái</label>
+            <label><input type="radio" name="guestSide" value="Nhà Trai" required> <span data-i18n="guestSideGroom">Nhà Trai</span></label>
+            <label><input type="radio" name="guestSide" value="Nhà Gái" required> <span data-i18n="guestSideBride">Nhà Gái</span></label>
           </div>
         </fieldset>
-        <fieldset><legend>BẠN SẼ THAM DỰ CHỨ? *</legend><div class="radio-row"><label><input type="radio" name="attendance" value="Có, tôi sẽ tham dự" required> Rất vui được tham dự</label><label><input type="radio" name="attendance" value="Rất tiếc, không thể tham dự"> Rất tiếc, không thể tham dự</label></div></fieldset>
-        <label for="guestCount">SỐ KHÁCH THAM DỰ</label><select id="guestCount" name="guestCount"><option value="1">1 người</option><option value="2">2 người</option><option value="3">3 người</option><option value="4">4 người</option><option value="5">5 người</option></select>
-        <label for="message">LỜI CHÚC GỬI ĐẾN CHÚNG MÌNH</label><textarea id="message" name="message" maxlength="1000" rows="3" placeholder="Viết lời chúc của bạn..."></textarea>
-        <button class="submit-button" type="submit" id="rsvpSubmit">GỬI XÁC NHẬN <span>↗</span></button><p id="formStatus" class="form-status" role="status" aria-live="polite"></p><p class="privacy-note">Thông tin chỉ được sử dụng để chuẩn bị cho ngày vui của chúng mình.</p>
+        <fieldset><legend data-i18n="attendanceLegend">BẠN SẼ THAM DỰ CHỨ? *</legend><div class="radio-row"><label><input type="radio" name="attendance" value="Có, tôi sẽ tham dự" required> <span data-i18n="attendanceYes">Rất vui được tham dự</span></label><label><input type="radio" name="attendance" value="Rất tiếc, không thể tham dự"> <span data-i18n="attendanceNo">Rất tiếc, không thể tham dự</span></label></div></fieldset>
+        <label for="guestCount" data-i18n="guestCountLabel">SỐ KHÁCH THAM DỰ</label><select id="guestCount" name="guestCount"><option value="1">1 người</option><option value="2">2 người</option><option value="3">3 người</option><option value="4">4 người</option><option value="5">5 người</option></select>
+        <label for="message" data-i18n="messageLabel">LỜI CHÚC GỬI ĐẾN CHÚNG MÌNH</label><textarea id="message" name="message" maxlength="1000" rows="3" data-i18n-placeholder="messagePlaceholder" placeholder="Viết lời chúc của bạn..."></textarea>
+        <button class="submit-button" type="submit" id="rsvpSubmit"><span data-i18n="rsvpSubmit">GỬI XÁC NHẬN</span> <span aria-hidden="true">↗</span></button><p id="formStatus" class="form-status" role="status" aria-live="polite"></p><p class="privacy-note" data-i18n="rsvpPrivacy">Thông tin chỉ được sử dụng để chuẩn bị cho ngày vui của chúng mình.</p>
       </form></section>
 
 <section class="gift-section section-pad" id="gifts" aria-labelledby="giftHeading">
       <div class="gift-section-heading reveal">
         <span class="gift-double-happiness" aria-hidden="true">囍</span>
-        <p class="eyebrow">A LITTLE TOKEN OF LOVE</p>
-        <h2 class="display-title" id="giftHeading">Wedding <i>Gift</i></h2>
+        <p class="eyebrow" data-i18n="giftOverline">MỘT CHÚT YÊU THƯƠNG</p>
+        <h2 class="display-title" id="giftHeading" data-i18n-html="giftTitle">Quà <i>mừng cưới</i></h2>
         <div class="gift-ornament" aria-hidden="true"><span></span><b>♥</b><span></span></div>
-        <p class="gift-intro">Sự hiện diện và những lời chúc của bạn đã là món quà quý giá nhất dành cho chúng mình.</p>
+        <p class="gift-intro" data-i18n="giftIntro">Sự hiện diện và những lời chúc của bạn đã là món quà quý giá nhất dành cho chúng mình.</p>
       </div>
 
       <div class="gift-grid">
@@ -143,22 +144,22 @@
             <div class="gift-qr-frame">
               <div class="gift-qr-placeholder" data-gift-qr-placeholder="groom">
                 <span class="gift-placeholder-symbol" aria-hidden="true">囍</span>
-                <span>MÃ QR ĐANG CẬP NHẬT</span>
+                <span data-i18n="giftQrWaiting">MÃ QR ĐANG CẬP NHẬT</span>
               </div>
-              <img data-gift-qr="groom" class="gift-qr-image" alt="Mã QR mừng cưới chú rể" loading="eager" hidden>
+              <img data-gift-qr="groom" class="gift-qr-image" data-i18n-aria="giftGroomQrAlt" alt="Mã QR mừng cưới chú rể" loading="eager" hidden>
             </div>
-            <span class="gift-photo-caption">FOR THE GROOM</span>
+            <span class="gift-photo-caption" data-i18n="giftForGroom">DÀNH CHO CHÚ RỂ</span>
           </div>
           <div class="gift-card-info">
-            <p class="eyebrow">WITH LOVE &amp; BEST WISHES</p>
-            <h3>Mừng cưới đến chú rể</h3>
-            <p class="gift-card-subtitle">Gửi lời chúc tới <span data-groom>Quốc Bảo</span></p>
+            <p class="eyebrow" data-i18n="giftWishes">THƯƠNG MẾN &amp; CHÚC PHÚC</p>
+            <h3 data-i18n="giftGroomTitle">Mừng cưới đến chú rể</h3>
+            <p class="gift-card-subtitle"><span data-i18n="giftTo">Gửi lời chúc tới</span> <span data-groom>Quốc Bảo</span></p>
             <dl class="gift-bank-details">
-              <div><dt>Ngân hàng</dt><dd data-gift-bank="groom">Đang cập nhật</dd></div>
-              <div><dt>Số tài khoản</dt><dd data-gift-account="groom">Đang cập nhật</dd></div>
-              <div><dt>Chủ tài khoản</dt><dd data-gift-holder="groom">Đang cập nhật</dd></div>
+              <div><dt data-i18n="bankLabel">Ngân hàng</dt><dd data-gift-bank="groom">Đang cập nhật</dd></div>
+              <div><dt data-i18n="accountLabel">Số tài khoản</dt><dd data-gift-account="groom">Đang cập nhật</dd></div>
+              <div><dt data-i18n="holderLabel">Chủ tài khoản</dt><dd data-gift-holder="groom">Đang cập nhật</dd></div>
             </dl>
-            <button class="gift-copy-button" type="button" data-gift-copy="groom" hidden>Sao chép số tài khoản <span aria-hidden="true">↗</span></button>
+            <button class="gift-copy-button" type="button" data-gift-copy="groom" hidden><span data-i18n="giftCopy">Sao chép số tài khoản</span> <span aria-hidden="true">↗</span></button>
             <p class="gift-copy-status" data-gift-status="groom" role="status" aria-live="polite"></p>
           </div>
         </article>
@@ -169,39 +170,41 @@
             <div class="gift-qr-frame">
               <div class="gift-qr-placeholder" data-gift-qr-placeholder="bride">
                 <span class="gift-placeholder-symbol" aria-hidden="true">囍</span>
-                <span>MÃ QR ĐANG CẬP NHẬT</span>
+                <span data-i18n="giftQrWaiting">MÃ QR ĐANG CẬP NHẬT</span>
               </div>
-              <img data-gift-qr="bride" class="gift-qr-image" alt="Mã QR mừng cưới cô dâu" loading="eager" hidden>
+              <img data-gift-qr="bride" class="gift-qr-image" data-i18n-aria="giftBrideQrAlt" alt="Mã QR mừng cưới cô dâu" loading="eager" hidden>
             </div>
-            <span class="gift-photo-caption">FOR THE BRIDE</span>
+            <span class="gift-photo-caption" data-i18n="giftForBride">DÀNH CHO CÔ DÂU</span>
           </div>
           <div class="gift-card-info">
-            <p class="eyebrow">WITH LOVE &amp; BEST WISHES</p>
-            <h3>Mừng cưới đến cô dâu</h3>
-            <p class="gift-card-subtitle">Gửi lời chúc tới <span data-bride>Ngọc Lan</span></p>
+            <p class="eyebrow" data-i18n="giftWishes">THƯƠNG MẾN &amp; CHÚC PHÚC</p>
+            <h3 data-i18n="giftBrideTitle">Mừng cưới đến cô dâu</h3>
+            <p class="gift-card-subtitle"><span data-i18n="giftTo">Gửi lời chúc tới</span> <span data-bride>Ngọc Lan</span></p>
             <dl class="gift-bank-details">
-              <div><dt>Ngân hàng</dt><dd data-gift-bank="bride">Đang cập nhật</dd></div>
-              <div><dt>Số tài khoản</dt><dd data-gift-account="bride">Đang cập nhật</dd></div>
-              <div><dt>Chủ tài khoản</dt><dd data-gift-holder="bride">Đang cập nhật</dd></div>
+              <div><dt data-i18n="bankLabel">Ngân hàng</dt><dd data-gift-bank="bride">Đang cập nhật</dd></div>
+              <div><dt data-i18n="accountLabel">Số tài khoản</dt><dd data-gift-account="bride">Đang cập nhật</dd></div>
+              <div><dt data-i18n="holderLabel">Chủ tài khoản</dt><dd data-gift-holder="bride">Đang cập nhật</dd></div>
             </dl>
-            <button class="gift-copy-button" type="button" data-gift-copy="bride" hidden>Sao chép số tài khoản <span aria-hidden="true">↗</span></button>
+            <button class="gift-copy-button" type="button" data-gift-copy="bride" hidden><span data-i18n="giftCopy">Sao chép số tài khoản</span> <span aria-hidden="true">↗</span></button>
             <p class="gift-copy-status" data-gift-status="bride" role="status" aria-live="polite"></p>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="closing"><div class="closing-photo photo-placeholder" data-photo="closing"></div><div class="closing-shade"></div><div class="closing-content reveal"><p class="eyebrow inverse">WE CAN'T WAIT TO CELEBRATE WITH YOU</p><h2>Thank <i>you.</i></h2><p>With love,</p><strong><span data-groom>Quốc Bảo</span> <i>&</i> <span data-bride>Ngọc Lan</span></strong><small data-date-label>15 – 16 · 12 · 2026</small><small class="closing-lunar-date" data-lunar-label>07–08/11/2026 (âm lịch)</small></div></section>
-    <footer><span>MADE WITH LOVE - Letuantbvn</span><span id="footerNames">WEDDING · 2027</span><a href="#home">BACK TO TOP ↑</a></footer>
+    <section class="closing"><div class="closing-photo photo-placeholder" data-photo="closing"></div><div class="closing-shade"></div><div class="closing-content reveal"><p class="eyebrow inverse" data-i18n="closingOverline">HẸN GẶP BẠN TRONG NGÀY VUI</p><h2 data-i18n-html="closingTitle">Cảm <i>ơn bạn.</i></h2><p data-i18n="closingWithLove">Thân thương,</p><strong><span data-groom>Quốc Bảo</span> <i>&</i> <span data-bride>Ngọc Lan</span></strong><small data-date-label>15 – 16 · 12 · 2026</small><small class="closing-lunar-date" data-lunar-label>07–08/11/2026 (âm lịch)</small></div></section>
+    <footer><span data-i18n="footerMade">ĐƯỢC LÀM BẰNG TÌNH YÊU - Letuantbvn</span><span id="footerNames">WEDDING · 2027</span><a href="#home" data-i18n="footerTop">VỀ ĐẦU TRANG ↑</a></footer>
   </main>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Xem ảnh cưới"><button type="button" class="lightbox-close" id="lightboxClose" aria-label="Đóng">×</button><button type="button" class="lightbox-prev" id="lightboxPrev" aria-label="Ảnh trước">‹</button><img id="lightboxImage" alt="Ảnh cưới"><button type="button" class="lightbox-next" id="lightboxNext" aria-label="Ảnh tiếp">›</button></div>
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" data-i18n-aria="lightboxAria" aria-label="Xem ảnh cưới"><button type="button" class="lightbox-close" id="lightboxClose" data-i18n-aria="lightboxClose" aria-label="Đóng">×</button><button type="button" class="lightbox-prev" id="lightboxPrev" data-i18n-aria="lightboxPrev" aria-label="Ảnh trước">‹</button><img id="lightboxImage" alt="Ảnh cưới"><button type="button" class="lightbox-next" id="lightboxNext" data-i18n-aria="lightboxNext" aria-label="Ảnh tiếp">›</button></div>
   <audio id="backgroundMusic" loop preload="metadata"></audio>
   <script src="config/wedding-config.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
   <script src="js/countdown.js"></script>
   <script src="js/gallery.js"></script>
   <script src="js/rsvp.js"></script>
   <script src="js/wedding-gift.js"></script>
+  <script src="js/i18n-dynamic.js"></script>
 </body>
 </html>

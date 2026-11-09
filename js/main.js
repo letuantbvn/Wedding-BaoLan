@@ -163,9 +163,10 @@
   function setMusicUI(isPlaying) {
     musicButton.classList.toggle('playing', isPlaying);
     musicButton.setAttribute('aria-pressed', String(isPlaying));
-    musicButton.setAttribute('aria-label', isPlaying ? 'Tắt nhạc nền' : 'Bật nhạc nền');
-    musicText.textContent = isPlaying ? 'MUSIC ON' : 'MUSIC OFF';
-    musicButton.title = isPlaying ? 'Tắt nhạc nền' : 'Bật nhạc nền';
+    const i18n = window.WEDDING_I18N;
+    musicButton.setAttribute('aria-label', i18n.t(isPlaying ? 'musicOnAria' : 'musicOffAria'));
+    musicText.textContent = i18n.t(isPlaying ? 'musicOn' : 'musicOff');
+    musicButton.title = i18n.t(isPlaying ? 'musicOnAria' : 'musicOffAria');
   }
 
   function startMusic({silent = false} = {}) {
@@ -178,7 +179,7 @@
       }).catch(err => {
         console.warn('Không phát được nhạc nền:', err);
         setMusicUI(false);
-        if (!silent) musicButton.title = 'Không thể phát nhạc, hãy kiểm tra tệp âm thanh';
+        if (!silent) musicButton.title = window.WEDDING_I18N.t('musicError');
         return false;
       });
     } catch (err) {
@@ -193,7 +194,7 @@
   audio.addEventListener('error', () => setMusicUI(false));
   musicButton.addEventListener('click', () => {
     if (!c.musicEnabled || !c.musicFile) {
-      musicButton.title = 'Nhạc nền chưa được cấu hình';
+      musicButton.title = window.WEDDING_I18N.t('musicMissing');
       return;
     }
     if (!audio.paused) {

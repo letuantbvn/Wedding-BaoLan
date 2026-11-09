@@ -1,4 +1,4 @@
-# Wedding Invitation v1.6 — Luxury Ivory
+# Wedding Invitation v1.7 — Luxury Ivory (VN / EN)
 
 Website thiệp cưới HTML + CSS + JavaScript thuần, chạy qua GitHub Pages.
 
@@ -173,3 +173,21 @@ Backup trước lần cập nhật: D:\Code\Inivation_Wedding_backup_Gift_202611
 - Bổ sung CSS desktop ở css/typography-v16.css (tải sau polish-v14.css). Tăng nhẹ kích thước chữ menu, mô tả, nội dung câu chuyện, địa chỉ, form RSVP, Wedding Gift và footer từ màn hình rộng tối thiểu 851px; không làm to lại typography mobile.
 - Kiểm thử Microsoft Edge headless: nhạc phát ngay từ click mở thiệp; MENU MUSIC ON, OFF, ON hoạt động; font desktop paragraph 17px, subtitle 15px, menu 13px, RSVP input 16px, gift account 14px; mobile 390px không tràn ngang.
 - Bản backup trước thay đổi nằm tại D:\Code\Inivation_Wedding_backup_music_typography_20261109.
+
+
+## 13. Song ngữ Việt / Anh — v1.7
+
+- **Tiếng Việt là mặc định** khi mở hoặc tải lại thiệp (không lưu lựa chọn EN vào localStorage).
+- Nút VN / EN nằm **ngay cạnh nút nhạc** trên thanh menu. Nhấn để đổi toàn bộ chữ trên trang mà không reload.
+- Bản dịch bao gồm: mở thiệp, menu, hero, câu chuyện, đếm ngược, ngày cưới, lịch trình Nhà Trai/Nhà Gái, Google Calendar, album, RSVP, Wedding Gift, thông báo gửi form, thanh nhạc và footer.
+- Phần ngày âm/dương và thứ trong tuần tự chuyển theo ngôn ngữ. Địa chỉ, tên riêng, số tài khoản ngân hàng và liên kết bản đồ vẫn giữ nguyên dữ liệu gốc.
+- Các giá trị **radio RSVP gửi sang Google Sheets không thay đổi** (guestSide: Nhà Trai / Nhà Gái, attendance giữ nguyên tiếng Việt), ngay cả khi khách đang xem trang bằng English.
+- Nút không làm dừng nhạc hoặc mất dữ liệu người dùng đang nhập, cũng không làm thu gọn album đã mở.
+- js/i18n.js: bảng dịch tĩnh + điều khiển nút VN/EN + thuộc tính lang.
+- js/i18n-dynamic.js: dịch ngày tháng, lịch trình, bản đồ, Google Calendar, gallery, biểu mẫu đang nhập.
+- js/countdown.js, js/rsvp.js, js/wedding-gift.js, js/main.js: thông điệp và nhãn động theo ngôn ngữ.
+- css/i18n-v17.css: style nút switch; desktop một hàng và mobile menu hai hàng cho 320–600px.
+- Kiểm thử Edge: default VI, chuyển EN rồi trở về VI, nhạc tiếp tục phát, 8→16 ảnh trong album, dữ liệu form không mất, không tràn ngang ở 320 / 390 / 600 / 768 / 1024px.
+- Backup trước chỉnh sửa: D:\Code\Inivation_Wedding_backup_i18n_20261109.
+
+Để chỉnh câu chữ: sửa cặp ngôn ngữ trong bảng messages của js/i18n.js. Không cần database, framework hay dịch vụ dịch máy. Source tương thích GitHub Pages.
