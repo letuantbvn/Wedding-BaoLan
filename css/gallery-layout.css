@@ -1,0 +1,84 @@
+/* Gallery v1.2 — hiển thị đầy đủ tỷ lệ ảnh gốc.
+   Dùng masonry columns thay vì grid row cố định + object-fit:cover. */
+.gallery-grid {
+  display: block;
+  columns: 3;
+  column-gap: 16px;
+  max-width: 1120px;
+  margin-inline: auto;
+  grid-auto-rows: auto;
+}
+.gallery-tile,
+.gallery-tile.gallery-tall,
+.gallery-tile.gallery-wide {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  margin: 0 0 16px;
+  padding: 0;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  overflow: hidden;
+  border: none;
+  background: #ded4c7;
+  box-shadow: 0 3px 15px rgba(81, 68, 55, .06);
+  filter: none;
+  scale: 1;
+  transition: box-shadow .3s ease, opacity .3s ease;
+}
+.gallery-tile img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+  transition: opacity .3s ease;
+}
+.gallery-tile:hover {
+  filter: none;
+  scale: 1;
+  box-shadow: 0 12px 26px rgba(81, 68, 55, .16);
+}
+.gallery-tile:hover img {
+  transform: none;
+  opacity: .94;
+}
+.gallery-tile:focus-visible {
+  outline: 2px solid #9c8260;
+  outline-offset: 3px;
+}
+/* Radio lựa chọn gia đình trong RSVP */
+.rsvp-form .family-side-field { margin-top: 24px; }
+.rsvp-form .family-side-field legend { margin-top: 0; }
+.rsvp-form .family-side-options { gap: 18px; }
+.family-side-options label {
+  padding: 12px 22px;
+  border: 1px solid #d6c8b6;
+  border-radius: 3px;
+  min-width: 145px;
+  background: rgba(255,255,255,.32);
+  transition: border-color .25s, background-color .25s;
+}
+.family-side-options label:has(input:checked) {
+  border-color: #9c8260;
+  background: #f0e9df;
+}
+.family-side-options label:focus-within { outline: 1px solid #9c8260; }
+@media (max-width: 850px) {
+  .gallery-grid { columns: 2; column-gap: 12px; }
+  .gallery-tile { margin-bottom: 12px; }
+}
+@media (max-width: 560px) {
+  .gallery-grid { columns: 1; column-gap: 0; }
+  .gallery-tile { margin-bottom: 14px; }
+  .family-side-options { flex-direction: row; gap: 10px; }
+  .family-side-options label { min-width: 0; flex: 1; padding: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery-tile, .gallery-tile img { transition: none; }
+}

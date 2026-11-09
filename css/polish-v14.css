@@ -1,0 +1,120 @@
+/* Wedding Invitation v1.4: gallery preview + menu + dual-calendar schedule */
+.desktop-nav a {
+  font-size: 11px;
+  letter-spacing: .12em;
+  font-weight: 500;
+}
+.desktop-nav { gap: clamp(16px, 2.4vw, 35px); }
+.site-header { gap: 14px; }
+
+#galleryGrid .gallery-tile[hidden],
+#galleryMore[hidden] { display: none !important; }
+.gallery-actions {
+  max-width: 1120px;
+  margin: 37px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.gallery-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 224px;
+  min-height: 49px;
+  padding: 14px 30px;
+  border: 1px solid #a99170;
+  background: transparent;
+  color: #6d5945;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .13em;
+  transition: background .3s ease, color .3s ease, transform .3s ease;
+}
+.gallery-more:hover { background: #695846; color: #fffaf3; transform: translateY(-2px); }
+.gallery-more:focus-visible { outline: 2px solid #886b4d; outline-offset: 4px; }
+.gallery-count { font-size: 10px; letter-spacing: .15em; color: #968673; margin: 0; }
+.intro-lunar-date { font-size: 8px !important; letter-spacing: .08em !important; margin-top: 7px; }
+.hero-lunar-date {
+  font-size: 11px;
+  letter-spacing: .13em;
+  color: #efe2d3;
+  margin: 17px auto 0;
+}
+.welcome-lunar-date {
+  margin-top: 18px;
+  font-size: 11px;
+  color: #9a876e;
+  letter-spacing: .08em;
+}
+.event-lunar-date {
+  font-size: 12px;
+  color: #8f7c66;
+  letter-spacing: .06em;
+  margin-top: -3px;
+}
+.closing-content > small.closing-lunar-date {
+  margin-top: 8px;
+  font-size: 10px;
+  letter-spacing: .09em;
+  color: #eee0ce;
+}
+.venue-schedule {
+  width: 100%;
+  max-width: 350px;
+  margin: 14px auto 22px;
+  text-align: left;
+}
+.venue-schedule-title {
+  text-align: center;
+  font-size: 9px !important;
+  font-weight: 500;
+  letter-spacing: .16em;
+  color: #a38969 !important;
+  margin: 0 0 13px !important;
+  min-height: 0 !important;
+}
+.venue-schedule-row {
+  display: grid;
+  grid-template-columns: 68px minmax(0, 1fr);
+  align-items: center;
+  gap: 11px;
+  padding: 12px 13px;
+  background: rgba(246, 241, 234, .74);
+  border-left: 2px solid #c4af90;
+  margin-bottom: 9px;
+  border-radius: 0 4px 4px 0;
+}
+.venue-schedule-time {
+  font: 500 25px/1 var(--serif);
+  color: #6b5642;
+  font-variant-numeric: tabular-nums;
+}
+.venue-schedule-details { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.venue-schedule-solar { font-size: 12px; font-weight: 500; color: #5c4d3e; }
+.venue-schedule-lunar { font-size: 10px; color: #98836c; }
+@media(max-width:850px) {
+  .desktop-nav a { font-size: 10px; letter-spacing: .07em; }
+  .desktop-nav { gap: 14px; }
+}
+@media(max-width:600px) {
+  .desktop-nav a { font-size: 9px; letter-spacing: .02em; }
+  .desktop-nav { gap: 9px; }
+  .site-header { gap: 9px; }
+  .gallery-actions { margin-top: 29px; }
+  .gallery-more { width: min(100%, 260px); }
+  .hero-lunar-date { font-size: 10px; margin-top: 13px; }
+  .venue-schedule { max-width: 310px; }
+  .venue-schedule-row { grid-template-columns: 65px minmax(0,1fr); }
+}
+@media(max-width:375px) {
+  .desktop-nav { gap: 7px; }
+  .desktop-nav a { font-size: 8.5px; letter-spacing: 0; }
+  .site-header { gap: 6px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .gallery-more { transition: none; }
+  .gallery-more:hover { transform: none; }
+}
