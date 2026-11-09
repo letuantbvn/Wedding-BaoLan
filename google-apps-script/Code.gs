@@ -3,12 +3,25 @@
  * Thêm Guest Side mà không làm lệch dữ liệu của sheet cũ.
  * Deploy: New deployment -> Web app -> Execute as Me -> Anyone.
  */
-const SPREADSHEET_ID = 'PASTE_YOUR_GOOGLE_SHEET_ID_HERE';
+// Sheet RSVP đã được tạo: https://docs.google.com/spreadsheets/d/1_IQXhfUWpxPYsPqbzo0yvy8b9fY8epFSDpjm7SvHfUs/edit
+const SPREADSHEET_ID = '1_IQXhfUWpxPYsPqbzo0yvy8b9fY8epFSDpjm7SvHfUs';
 const SHEET_NAME = 'RSVP';
 const BASE_HEADERS = [
   'Timestamp', 'Guest Name', 'Phone', 'Attendance',
   'Guests', 'Message', 'Wedding Date', 'Guest Side'
 ];
+
+// Truy cập /exec sau triển khai để kiểm tra quyền đọc Sheet.
+// Không xuất dữ liệu khách mời trong phản hồi này.
+function doGet() {
+  try {
+    const ready = Boolean(SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName(SHEET_NAME));
+    return json({ok:ready,service:'Wedding RSVP',ready});
+  } catch (err) {
+    console.error(err);
+    return json({ok:false,service:'Wedding RSVP',ready:false});
+  }
+}
 
 function doPost(e) {
   const lock = LockService.getScriptLock();
@@ -59,7 +72,7 @@ function doPost(e) {
     console.error(err);
     return json({ok:false,error:'Server error'});
   } finally {
-    lock.releaseLock();
+    if (lock.hasLock()) lock.releaseLock();
   }
 }
 function json(obj) {

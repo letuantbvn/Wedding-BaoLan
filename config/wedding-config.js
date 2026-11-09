@@ -39,22 +39,22 @@ window.WEDDING_CONFIG = {
   // Không dùng các số tài khoản trong ảnh tham khảo nếu chưa xác nhận.
   gifts: {
     groom: {
-      bankName: "",
-      accountNumber: "",
-      accountHolder: "",
-      qrImage: "" // Ví dụ: "assets/images/qr-groom.png"
+      bankName: "HDBank",
+      accountNumber: "203704070032134",
+      accountHolder: "PHAM QUOC BAO",
+      qrImage: "assets/images/qr-groom.png"
     },
     bride: {
-      bankName: "",
-      accountNumber: "",
-      accountHolder: "",
-      qrImage: "" // Ví dụ: "assets/images/qr-bride.png"
+      bankName: "MB Bank",
+      accountNumber: "070024072",
+      accountHolder: "VU THI NGOC LAN",
+      qrImage: "assets/images/qr-bride.png"
     }
   },
 
   musicEnabled: true,
   musicFile: "assets/music/wedding.mp3",
-  googleScriptUrl: "", // URL Web App của Google Apps Script sau khi deploy
+  googleScriptUrl: "https://script.google.com/macros/s/AKfycbxJBXMsTRlKfpq0P-DjTwjoTh19dYnWtXaHCvdfG9gOVkJF642ElJuIjgkQY3nf2OVm/exec", // RSVP → Google Sheets
   images: {
     hero: "assets/images/hero.jpg",
     storyOne: "assets/images/story-01.jpg",

@@ -126,7 +126,15 @@
   }
 
   const main = $('#mainContent'), intro = $('#intro'), envelope = $('#envelope');
-  $('#openInvitation').addEventListener('click', () => {
+  const openInvitationButton = $('#openInvitation');
+  let invitationOpening = false;
+  openInvitationButton.addEventListener('click', () => {
+    if (invitationOpening) return;
+    invitationOpening = true;
+    openInvitationButton.disabled = true;
+    // Phát nhạc NGAY trong click mở thiệp: giữ quyền tương tác người dùng,
+    // tránh lỗi autoplay bị chặn khi gọi play() trong setTimeout 900ms.
+    if (c.musicEnabled && c.musicFile) void startMusic({silent: true});
     envelope.classList.add('opening');
     setTimeout(() => {
       intro.classList.add('opened');
@@ -146,24 +154,52 @@
   $$('.reveal').forEach(el => observer.observe(el));
 
   const audio = $('#backgroundMusic'), musicButton = $('#musicToggle'), musicText = $('#musicText');
-  let playing = false;
-  if (c.musicEnabled && c.musicFile) audio.src = c.musicFile;
-  musicButton.addEventListener('click', async () => {
+  if (c.musicEnabled && c.musicFile) {
+    audio.src = c.musicFile;
+    audio.preload = 'metadata'; // Chuẩn bị thông tin nhạc trước khi khách mở thiệp
+    audio.volume = 0.55; // Âm lượng nhẹ nhàng; khách vẫn có thể tắt qua menu
+  }
+
+  function setMusicUI(isPlaying) {
+    musicButton.classList.toggle('playing', isPlaying);
+    musicButton.setAttribute('aria-pressed', String(isPlaying));
+    musicButton.setAttribute('aria-label', isPlaying ? 'Tắt nhạc nền' : 'Bật nhạc nền');
+    musicText.textContent = isPlaying ? 'MUSIC ON' : 'MUSIC OFF';
+    musicButton.title = isPlaying ? 'Tắt nhạc nền' : 'Bật nhạc nền';
+  }
+
+  function startMusic({silent = false} = {}) {
+    if (!c.musicEnabled || !c.musicFile) return Promise.resolve(false);
+    // play() phải được gọi trực tiếp trong sự kiện click, KHÔNG để sau timeout.
+    try {
+      return Promise.resolve(audio.play()).then(() => {
+        setMusicUI(true);
+        return true;
+      }).catch(err => {
+        console.warn('Không phát được nhạc nền:', err);
+        setMusicUI(false);
+        if (!silent) musicButton.title = 'Không thể phát nhạc, hãy kiểm tra tệp âm thanh';
+        return false;
+      });
+    } catch (err) {
+      console.warn('Không thể khởi tạo nhạc nền:', err);
+      setMusicUI(false);
+      return Promise.resolve(false);
+    }
+  }
+
+  audio.addEventListener('play', () => setMusicUI(true));
+  audio.addEventListener('pause', () => setMusicUI(false));
+  audio.addEventListener('error', () => setMusicUI(false));
+  musicButton.addEventListener('click', () => {
     if (!c.musicEnabled || !c.musicFile) {
-      alert('Nhạc nền chưa được cấu hình.'); return;
+      musicButton.title = 'Nhạc nền chưa được cấu hình';
+      return;
     }
-    if (playing) {
-      audio.pause(); playing = false;
+    if (!audio.paused) {
+      audio.pause();
     } else {
-      try { await audio.play(); playing = true; }
-      catch (err) {
-        console.warn('Không phát được nhạc:', err);
-        alert('Vui lòng kiểm tra file nhạc trong assets/music.');
-      }
+      void startMusic();
     }
-    musicButton.classList.toggle('playing', playing);
-    musicButton.setAttribute('aria-pressed', String(playing));
-    musicButton.setAttribute('aria-label', playing ? 'Tắt nhạc nền' : 'Bật nhạc nền');
-    musicText.textContent = playing ? 'MUSIC ON' : 'MUSIC OFF';
   });
 })();

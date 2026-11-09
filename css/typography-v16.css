@@ -1,0 +1,58 @@
+/* v1.6 — Readable Luxury Editorial typography for desktop.
+   Giữ nguyên kích thước mobile, tăng độ rõ chữ cho màn hình từ 851px. */
+@media (min-width: 851px) {
+  body { font-size: 16px; }
+
+  /* Chữ thông tin & chú thích */
+  .eyebrow { font-size: 13px; }
+  .subtitle { font-size: 15px; line-height: 1.85; }
+  .paragraph { font-size: 17px; line-height: 1.95; max-width: 660px; }
+  .story-body p { font-size: 20px; line-height: 1.75; }
+  .story-body small { font-size: 11px; }
+
+  /* Thanh menu & thông tin trong hero */
+  .desktop-nav a { font-size: 13px; letter-spacing: .10em; }
+  .music-toggle { font-size: 12px; }
+  .hero-note, .hero-date { font-size: 12px; }
+  .hero-lunar-date, .welcome-lunar-date { font-size: 13px; }
+  .scroll-down { font-size: 10px; }
+
+  /* Địa chỉ và lịch trình hai gia đình */
+  .event-date-weekdays { font-size: 12px; }
+  .event-lunar-date { font-size: 14px; }
+  .event-card article > p:not(.eyebrow) { font-size: 14px; line-height: 1.85; }
+  .event-card article > a, .calendar-link-wrap a { font-size: 11px; }
+  .venue-schedule { max-width: 370px; }
+  .venue-schedule-title { font-size: 11px !important; }
+  .venue-schedule-row { grid-template-columns: 74px minmax(0, 1fr); }
+  .venue-schedule-solar { font-size: 14px; }
+  .venue-schedule-lunar { font-size: 12px; }
+  .dress-code .eyebrow { font-size: 12px; }
+
+  /* Gallery */
+  .gallery-more, .gallery-count { font-size: 12px; }
+
+  /* Form RSVP */
+  .rsvp-form > label, .rsvp-form legend { font-size: 11px; }
+  .rsvp-form input[type=text],
+  .rsvp-form input[type=tel],
+  .rsvp-form select,
+  .rsvp-form textarea { font-size: 16px; line-height: 1.5; }
+  .radio-row label, .family-side-options label { font-size: 14px; }
+  .submit-button { font-size: 12px; }
+  .form-status { font-size: 14px; }
+  .privacy-note { font-size: 12px; }
+
+  /* Wedding Gift */
+  .gift-intro { font-size: 15px; max-width: 620px; }
+  .gift-card-info .eyebrow { font-size: 10px; }
+  .gift-card-subtitle { font-size: 13px; }
+  .gift-bank-details dt { font-size: 13px; }
+  .gift-bank-details dd { font-size: 14px; }
+  .gift-copy-button { font-size: 12px; }
+  .gift-copy-status { font-size: 12px; }
+  .gift-photo-caption { font-size: 11px; }
+
+  /* Lời cảm ơn & footer */
+  .closing-content > small, footer { font-size: 11px; }
+}

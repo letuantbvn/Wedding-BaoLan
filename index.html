@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/gallery-layout.css">
   <link rel="stylesheet" href="css/wedding-gift.css">
   <link rel="stylesheet" href="css/polish-v14.css">
+  <link rel="stylesheet" href="css/typography-v16.css">
 </head>
 <body class="is-locked">
   <div class="intro" id="intro" aria-label="Lời mời dự đám cưới">
@@ -144,7 +145,7 @@
                 <span class="gift-placeholder-symbol" aria-hidden="true">囍</span>
                 <span>MÃ QR ĐANG CẬP NHẬT</span>
               </div>
-              <img data-gift-qr="groom" class="gift-qr-image" alt="Mã QR mừng cưới chú rể" loading="lazy" hidden>
+              <img data-gift-qr="groom" class="gift-qr-image" alt="Mã QR mừng cưới chú rể" loading="eager" hidden>
             </div>
             <span class="gift-photo-caption">FOR THE GROOM</span>
           </div>
@@ -170,7 +171,7 @@
                 <span class="gift-placeholder-symbol" aria-hidden="true">囍</span>
                 <span>MÃ QR ĐANG CẬP NHẬT</span>
               </div>
-              <img data-gift-qr="bride" class="gift-qr-image" alt="Mã QR mừng cưới cô dâu" loading="lazy" hidden>
+              <img data-gift-qr="bride" class="gift-qr-image" alt="Mã QR mừng cưới cô dâu" loading="eager" hidden>
             </div>
             <span class="gift-photo-caption">FOR THE BRIDE</span>
           </div>
@@ -191,11 +192,11 @@
     </section>
 
     <section class="closing"><div class="closing-photo photo-placeholder" data-photo="closing"></div><div class="closing-shade"></div><div class="closing-content reveal"><p class="eyebrow inverse">WE CAN'T WAIT TO CELEBRATE WITH YOU</p><h2>Thank <i>you.</i></h2><p>With love,</p><strong><span data-groom>Quốc Bảo</span> <i>&</i> <span data-bride>Ngọc Lan</span></strong><small data-date-label>15 – 16 · 12 · 2026</small><small class="closing-lunar-date" data-lunar-label>07–08/11/2026 (âm lịch)</small></div></section>
-    <footer><span>MADE WITH LOVE</span><span id="footerNames">WEDDING · 2027</span><a href="#home">BACK TO TOP ↑</a></footer>
+    <footer><span>MADE WITH LOVE - Letuantbvn</span><span id="footerNames">WEDDING · 2027</span><a href="#home">BACK TO TOP ↑</a></footer>
   </main>
 
   <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Xem ảnh cưới"><button type="button" class="lightbox-close" id="lightboxClose" aria-label="Đóng">×</button><button type="button" class="lightbox-prev" id="lightboxPrev" aria-label="Ảnh trước">‹</button><img id="lightboxImage" alt="Ảnh cưới"><button type="button" class="lightbox-next" id="lightboxNext" aria-label="Ảnh tiếp">›</button></div>
-  <audio id="backgroundMusic" loop preload="none"></audio>
+  <audio id="backgroundMusic" loop preload="metadata"></audio>
   <script src="config/wedding-config.js"></script>
   <script src="js/main.js"></script>
   <script src="js/countdown.js"></script>
